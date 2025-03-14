@@ -141,8 +141,8 @@ def predict():
             results = []
             for idx, res in enumerate(output):
                 # Save to image
-                img_path = os.path.join(output_img_dir, f"output_{idx}.jpg")
-                res.save_to_img(save_path=img_path)
+                # img_path = os.path.join(output_img_dir, f"output_{idx}.jpg")
+                # res.save_to_img(save_path=img_path)
 
                 # Save to JSON
                 json_path = os.path.join(output_img_dir, f"output_{idx}.json")
@@ -154,7 +154,7 @@ def predict():
                         result_data = json.load(f)
                         results.append({
                             "idx": idx,
-                            "img_path": img_path,
+                            # "img_path": img_path,
                             "json_path": json_path,
                             "data": result_data
                         })
@@ -163,7 +163,7 @@ def predict():
                     # Fall back to manual conversion
                     results.append({
                         "idx": idx,
-                        "img_path": img_path,
+                        # "img_path": img_path,
                         "json_path": json_path,
                         "data": convert_result_to_dict(res)
                     })

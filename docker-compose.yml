@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  layout-detection-api:
+    build:
+      context: .
+      args:
+        - USE_GPU=false
+    ports:
+      - "5000:5000"
+    environment:
+      - USE_GPU=false
